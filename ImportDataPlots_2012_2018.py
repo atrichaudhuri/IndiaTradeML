@@ -1,36 +1,53 @@
-import pandas as pd 
+import numpy as mp
+import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
 
-def readImportData():
 
-    ImportData = pd.read_csv('/home/atri/Documents/NTCC Sem 5/india-trade-data/2018-2010_import.csv')
 
-def ScatterPlot2012_2018():
-    ImportData2018 = ImportData[ImportData['year']==2018]
-    ImportData2017 = ImportData[ImportData['year']==2017]
-    ImportData2016 = ImportData[ImportData['year']==2016]
-    ImportData2015 = ImportData[ImportData['year']==2015]
-    ImportData2014 = ImportData[ImportData['year']==2014]
-    ImportData2013 = ImportData[ImportData['year']==2013]
-    ImportData2012 = ImportData[ImportData['year']==2012]
+ImportData = pd.read_csv('/home/atri/Documents/NTCC Sem 5/india-trade-data/2018-2010_import.csv')
 
-    ImportData2018HSandValue = ImportData2018[['HSCode' , 'value']]
-    ImportData2017HSandValue = ImportData2017[['HSCode' , 'value']]
-    ImportData2016HSandValue = ImportData2016[['HSCode' , 'value']]
-    ImportData2015HSandValue = ImportData2015[['HSCode' , 'value']]
-    ImportData2014HSandValue = ImportData2014[['HSCode' , 'value']]
-    ImportData2013HSandValue = ImportData2013[['HSCode' , 'value']]
-    ImportData2012HSandValue = ImportData2012[['HSCode' , 'value']]
 
-    ImportData2018HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2018 Import Value For Each HSCode')
-    ImportData2017HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2017 Import Value For Each HSCode')
-    ImportData2016HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2016 Import Value For Each HSCode')
-    ImportData2015HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2015 Import Value For Each HSCode')
-    ImportData2014HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2014 Import Value For Each HSCode')
-    ImportData2013HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2013 Import Value For Each HSCode')
-    ImportData2012HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2012 Import Value For Each HSCode')
+ImportData2018 = ImportData[ImportData['year']==2018]
+ImportData2017 = ImportData[ImportData['year']==2017]
+ImportData2016 = ImportData[ImportData['year']==2016]
+ImportData2015 = ImportData[ImportData['year']==2015]
+ImportData2014 = ImportData[ImportData['year']==2014]
+ImportData2013 = ImportData[ImportData['year']==2013]
+ImportData2012 = ImportData[ImportData['year']==2012]
 
-    plt.show()
+ImportData2018HSandValue = ImportData2018[['HSCode' , 'value']]
+ImportData2017HSandValue = ImportData2017[['HSCode' , 'value']]
+ImportData2016HSandValue = ImportData2016[['HSCode' , 'value']]
+ImportData2015HSandValue = ImportData2015[['HSCode' , 'value']]
+ImportData2014HSandValue = ImportData2014[['HSCode' , 'value']]
+ImportData2013HSandValue = ImportData2013[['HSCode' , 'value']]
+ImportData2012HSandValue = ImportData2012[['HSCode' , 'value']]
 
-ScatterPlot2012_2018() 
+ImportData2018HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2018 Import Value For Each HSCode')
+ImportData2017HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2017 Import Value For Each HSCode')
+ImportData2016HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2016 Import Value For Each HSCode')
+ImportData2015HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2015 Import Value For Each HSCode')
+ImportData2014HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2014 Import Value For Each HSCode')
+ImportData2013HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2013 Import Value For Each HSCode')
+ImportData2012HSandValue.plot(kind='scatter', x='HSCode', y='value', title='2012 Import Value For Each HSCode')
+
+plt.show()
+
+
+
+targetprereshape = ImportData2018['value']
+target = targetprereshape.reshape(-1,1)
+features = ImportData2018['HSCode']
+X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=10)
+from sklearn.ensemble import RandomForestRegressor
+
+# create the model
+regressor_model = RandomForestRegressor(random_state=0)
+
+# fit the model
+regressor_model.fit(X_train, y_train)
+
+# Make predictions using the testing set
+y_pred = regressor_model.predict(X_test)
 
