@@ -1,11 +1,9 @@
 import numpy as mp
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
 
 
-
-ImportData = pd.read_csv('/home/atri/Documents/NTCC Sem 5/india-trade-data/2018-2010_import.csv')
+ImportData = pd.read_csv('2018-2010_import.csv')
 
 
 ImportData2018 = ImportData[ImportData['year']==2018]
@@ -36,18 +34,5 @@ plt.show()
 
 
 
-targetprereshape = ImportData2018['value']
-target = targetprereshape.reshape(-1,1)
-features = ImportData2018['HSCode']
-X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=10)
-from sklearn.ensemble import RandomForestRegressor
 
-# create the model
-regressor_model = RandomForestRegressor(random_state=0)
-
-# fit the model
-regressor_model.fit(X_train, y_train)
-
-# Make predictions using the testing set
-y_pred = regressor_model.predict(X_test)
 
