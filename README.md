@@ -24,5 +24,5 @@ The combination of predictions and visualizations will allow us to identify the 
 # The Dataset
 
 The dataset consists of Indian import data for the years 2010 to 2018.
-It was taken from the popular data science forum [Kaggle](kaggle.com)
+It was taken from the popular data science forum [Kaggle.](kaggle.com)
 >[India Trade Data](https://www.kaggle.com/lakshyaag/india-trade-data)
