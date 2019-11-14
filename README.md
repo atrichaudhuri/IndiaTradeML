@@ -1,5 +1,5 @@
 # IndiaTradeML
-#Overview 
+# Overview 
 
 The project deals with the prediction of Indian trade data values
  from pre existing data sets of import and export statistics. 
@@ -12,16 +12,16 @@ The project deals with the prediction of Indian trade data values
 
 The primary objective is to use linear regression to estimate the total value of trade that will take place in the coming years.   
 
-##Visualize The Given Data 
+## Visualize The Given Data 
 
 The data is of a large magnitude and therefore is difficult to comprehend in it’s given form.
 Visualizations are powerful tools that allow large amounts of data to be presented in an intuitive manner
 
-##Identify Key Features
+## Identify Key Features
 
 The combination of predictions and visualizations will allow us to identify the key factors that affect the trends that we are attempting to chart.
 
-#The Dataset
+# The Dataset
 
 The dataset consists of Indian import data for the years 2010 to 2018.
 It was taken from the popular data science forum [Kaggle](kaggle.com)
