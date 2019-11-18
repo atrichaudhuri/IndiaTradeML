@@ -12,7 +12,7 @@ The project deals with the prediction of Indian trade data values
 
 ## Predict Future Import Values
 
-The primary objective is to use linear regression to estimate the total value of trade that will take place in the coming years.   
+The primary objective is to use linear regression to estimate the total value of trade that will take place in the next 5 years (2019 to 2023).   
 
 ## Visualize The Given Data 
 
