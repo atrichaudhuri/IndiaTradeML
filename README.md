@@ -1,5 +1,5 @@
 # Machine Learning using Python to Predict Indian Trade Data Values
-## This is my first repository, first Python project and first attempt at working with Machine Learning.
+*This is my first repository, first Python project and first attempt at working with Machine Learning.*
 --- 
 # Overview 
 
